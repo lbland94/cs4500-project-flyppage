@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>FlypPage - Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="./js/materialize.js"></script>
+   <link rel="stylesheet" href="./css/materialize.min.css">
+  </script>
+ 
+  <style type="text/css">
+   /* over all rules */
+   *{ box-sizing:border-box; }
+   html,body{ margin:0;padding:0;background:LightBlue;color:#333;font-family:'Open Sans','Trebuchet MS','Arial',sans-serif; }
+
+   .container{ width:95%; position:relative; min-width: 400px; }   
+   a{ text-decoration:none;color:#c33; }
+   
+   header,footer,article,nav,section{ float:left;padding:0; }
+   header,footer{ width:100%; }
+   header,footer{ background-color:#5d4037;
+                  color:#fff;
+                  text-align:center;
+                  height:50px; }
+   header{ font-size:1.8em;font-weight:bold; }
+   header big{ line-height:130px;vertical-align:middle; }
+   
+   footer{ background-color:#5d4037;height:40px; }
+   footer a{ text-decoration:underline;color:#fff;font-weight:bold; }
+  
+   /* <article> tag is our 'content area' */
+   article{ 	
+		border-style: solid;
+		border-color: #5d4037;
+		border-width: 20px;
+	  	border-bottom: 15px solid black;
+ 		border-top: 0px;
+		width:100%;
+		background-image: url("http://images.all-free-download.com/images/graphicthumb/wood_03_hd_picture_168502.jpg");
+		background-repeat: repeat-xy;		
+   }
+   h1{ padding:0;margin:0 0 20px 0; }
+  
+   /* section */
+   article section{ padding:0 }
+   
+   /* basic page division */
+   .whole{ font-weight: bold; margin-left:20%; width: 100%; float:center; margin-right:20%; }
+   .halves,.thirds{ 
+	    vertical-align:bottom; width:45%;float:left;margin-right:20px;margin-left:20px; }
+   .thirds{ width:32.66666%;margin-right:1%; }
+   
+   .last{ margin-right:20px; }
+   .carousel {
+    }
+
+  </style>
+</head> 
+
+
+<body>
+ <div class="container">
+
+<?-- Load the scripts for the Materialize items
+	ul.tabs is the tabs at the top
+	carousel controls the carousel for the book sections
+	modal controls the popouts for the books
+	carousel-slider is an unused fourth option at the moment
+	http://www.materializecss.com/ for more information on these -->
+	  
+ <script>
+  function reloadReady(tab) {
+    docPrepReady();
+  }
+  function docPrepReady(jQuery){
+    $('.carousel').carousel({shift:50,dist:0,indicators:true,padding:50,noWrap:true,noFade:true});
+    $('.carousel').carousel('set',2);
+    $('.modal').modal();
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
+    $('ul.tabs').tabs({});
+  }
+  $(document).ready(docPrepReady);
+ </script>
+ 
+ <br>
+ 
+  <nav class="nav-extended">
+    <div class="nav-wrapper brown darken-4">
+     <img src="images/flyppage_logo_white2.png">
+       <!--<ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Books</a></li>
+        <li><a href="vocab_list.html">Vocabulary</a></li>
+        <li><a href="friend_list.html">Friends</a></li>
+      </ul>-->
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent brown darken-4">
+        <li class="tab"><a href="#book_list">Books</a></li>
+        <li class="tab"><a href="#vocab_list">Vocabulary</a></li>
+        <li class="tab"><a href="#friend_list">Friends</a></li>
+      </ul>
+    </div>
+  </nav>
+
+ <div id="book_list">
+ <header>
+  <h5><center>Suggested Reading:</center></h5>
+ </header>
+
+
+ <article>
+  <div>
+   <p>
+    <div class="carousel">
+    <a class="carousel-item" href="#suggested1"><img src="https://www.pushkinpress.com/wp-content/uploads/getimage-88-250x350.jpeg"></a></a> 
+    <a class="carousel-item" href="#suggested2"><img src="http://www.teaching.com.au/resources/static/main/IMAGE/TB167B.JPG"></a> 
+    <a class="carousel-item" href="#suggested6"><img src="books/0/cover.jpg"></a> 
+    <a class="carousel-item" href="#suggested3"><img src="https://vignette3.wikia.nocookie.net/seuss/images/5/55/A-Fish-Out-of-Water.jpg/revision/latest/scale-to-width-down/250?cb=20130331011824"></a>
+    <a class="carousel-item" href="#suggested4"><img src="http://elizabethannpatterson.com/uploads/3/4/9/2/34927408/__4970415.jpg?250"></a>
+    <a class="carousel-item" href="#suggested5"><img src="http://vignette1.wikia.nocookie.net/smurfs/images/a/a8/Smurf_King_cover.jpg/revision/latest?cb=20160531170008"></a>
+    </div>
+   </p>
+  </div>
+ </article>
+
+ <header>
+  <h5><center>History:</center></h5>
+ </header>
+  <article>
+  <div>
+   <p>
+    <div class = "carousel">
+    <a class="carousel-item" href="#history1"><img src="https://s-media-cache-ak0.pinimg.com/564x/65/3f/d7/653fd707f40ec16a6ad391a8fed8d401.jpg"></a> 
+    <a class="carousel-item" href="#history2"><img src="https://www.cranprep.org/files/2016/09/Beetle-Boy-250x350.jpg"></a> 
+    <a class="carousel-item" href="#history6"><img src="books/1/cover.jpg"></a> 
+    <a class="carousel-item" href="#history3"><img src="https://s-media-cache-ak0.pinimg.com/736x/99/e3/35/99e335a66c8f63419da2787b0f9ad7b0.jpg"></a>
+    <a class="carousel-item" href="#history4"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/The-third-jungle-book-cover.jpg/250px-The-third-jungle-book-cover.jpg"></a>
+    <a class="carousel-item" href="#history5"><img src="https://ak1.ostkcdn.com/images/products//bmmg/books/P9780805089905.JPG"></a>
+    </div>
+   </p>
+  </div>
+ </article>
+ 
+ <header>
+  <h5><center>In Progress:</center></h5>
+ </header>
+ <article>
+  <div>
+   <p>
+    <div class = "carousel">
+    <a class="carousel-item" href="#inprogress1"><img src="https://s-media-cache-ak0.pinimg.com/736x/24/76/83/24768367e2c8304e723d8b772a4742ae.jpg"></a>
+    <a class="carousel-item" href="#inprogress2"><img src="https://ak1.ostkcdn.com/images/products//bmmg/books/P9780062332486.JPG"></a>
+    <a class="carousel-item" href="#inprogress6"><img src="books/2/cover.png"></a>
+    <a class="carousel-item" href="#inprogress3"><img src="http://www.bookzibit.com/images/main/cover/MrBrownCanMooCanYou.jpg"></a>
+    <a class="carousel-item" href="#inprogress4"><img src="https://ak1.ostkcdn.com/images/products//bmmg/books/P9780670446827.JPG"></a>
+    <a class="carousel-item" href="#inprogress5"><img src="http://static.playbill.com/dims4/default/32082e7/2147483647/crop/1400x1960%2B0%2B0/resize/250x350/quality/90/?url=http%3A%2F%2Fstatic.playbill.com%2F95%2F98%2F66380c794c209a0101bf53a0e39c%2F911xmhn9-rl.jpg"></a>
+    </div>
+   </p>
+  </div>
+  </article>
+
+ <header>
+  <h5><center>Your Library:</center></h5>
+ </header>
+  <article>
+
+  <div>
+   <p>
+    <div class = "carousel">
+    <a class="carousel-item" href="#library1"><img src="http://hancockreads.weebly.com/uploads/9/0/1/8/90186589/go-dog-go-0-large.jpg"></a> 
+    <a class="carousel-item" href="#library2"><img src="http://www.kidsworldfun.com/images/ebooks/tyrone-the-big-bad-bully-ebook.jpg"></a> 
+    <a class="carousel-item" href="#library6"><img src="books/3/cover.jpg"></a>
+    <a class="carousel-item" href="#library7"><img src="books/4/cover.jpg"></a>
+    <a class="carousel-item" href="#library3"><img src="http://www.kidsworldfun.com/images/ebooks/waldo-and-the-desert-island-adventure-ebook.jpg"></a>
+    <a class="carousel-item" href="#library4"><img src="http://www.kidsworldfun.com/images/ebooks/patrick-found-a-something-ebook.jpg"></a>
+    <a class="carousel-item" href="#library5"><img src="https://usm.maine.edu/sites/default/files/planet/owos_poster_t.jpg"></a>
+    </div>
+   </p>
+  </div>
+ </article> 
+ </div>
+
+ <div id="vocab_list">
+  <header>
+  <h5><center>Your Vocabulary List:</center></h5>
+ </header>
+   <article>
+  <div class="row" style="margin: 0 15px;">
+  <div class="col m12 l6">
+    <div class="card">
+     <div class="row" style="margin-bottom:0;">
+      <div class="card-content col s6 flow-text">
+        <p><h5>pretend</h5></p>
+        <p><h6>
+        <i>transitive verb</i>
+        <br><br>
+        1: to give a false appearance of being, possessing, or performing
+        <br>
+        2a:  to make believe
+        <br>
+        2b:  to claim, represent, or assert falsely
+        <br><br>
+        <i>intransitive verb</i>
+        <br><br>
+        1:  to feign an action, part, or role especially in play
+        <br>
+        2:  to put in a claim
+
+        </h6></p>
+      </div>
+       <div class="card-image right col s6">
+        <img src="https://ak1.ostkcdn.com/images/products//bmmg/ent/P097360771442.JPG">
+      </div>
+      </div>
+      <div class="card-action">
+        <a href="#examples1">Sentence Examples</a>
+        <br>
+        <a href="#">View in Book</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col m12 l6">
+    <div class="card">
+     <div class="row" style="margin-bottom:0;">
+      <div class="card-content col s6">
+        <p><h5>pretend</h5></p>
+
+        <p><h6>
+        <i>transitive verb</i>
+        <br><br>
+        1: to give a false appearance of being, possessing, or performing
+        <br>
+        2a:  to make believe
+        <br>
+        2b:  to claim, represent, or assert falsely
+        <br><br>
+        <i>intransitive verb</i>
+        <br><br>
+        1:  to feign an action, part, or role especially in play
+        <br>
+        2:  to put in a claim
+       </div>
+       <div class="card-image right col s6">
+        <img src="http://www.kidsworldfun.com/images/ebooks/the-mouse-that-was-ebook.jpg">
+      </div>
+      </div>
+        <div class="card-action">
+          <a href="#examples2">Sentence Examples</a>
+          <br>
+          <a href="#">View in Book</a>
+        </div>
+    </div>
+  </div>
+
+  <div class="col m12 l6">
+    <div class="card">
+     <div class="row" style="margin-bottom:0;">
+      <div class="card-content col s6">
+        <p><h5>pretend</h5></p>
+
+        <p><h6>
+        <i>transitive verb</i>
+        <br><br>
+        1: to give a false appearance of being, possessing, or performing
+        <br>
+        2a:  to make believe
+        <br>
+        2b:  to claim, represent, or assert falsely
+        <br><br>
+        <i>intransitive verb</i>
+        <br><br>
+        1:  to feign an action, part, or role especially in play
+        <br>
+        2:  to put in a claim
+       </div>
+       <div class="card-image right col s6">
+        <img src="http://www.kidsworldfun.com/images/ebooks/waldo-and-the-desert-island-adventure-ebook.jpg">
+      </div>
+      </div>
+        <div class="card-action">
+          <a href="#examples2">Sentence Examples</a>
+          <br>
+          <a href="#">View in Book</a>
+        </div>
+    </div>
+  </div>
+  
+  <div class="col m12 l6">
+    <div class="card">
+     <div class="row" style="margin-bottom:0;">
+      <div class="card-content col s6">
+        <p><h5>pretend</h5></p>
+
+        <p><h6>
+        <i>transitive verb</i>
+        <br><br>
+        1: to give a false appearance of being, possessing, or performing
+        <br>
+        2a:  to make believe
+        <br>
+        2b:  to claim, represent, or assert falsely
+        <br><br>
+        <i>intransitive verb</i>
+        <br><br>
+        1:  to feign an action, part, or role especially in play
+        <br>
+        2:  to put in a claim
+       </div>
+       <div class="card-image right col s6">
+        <img src="https://s-media-cache-ak0.pinimg.com/564x/47/3d/4e/473d4e1b67881f1f6b10d6b896c1beaa.jpg">
+      </div>
+      </div>
+        <div class="card-action">
+          <a href="#examples2">Sentence Examples</a>
+          <br>
+          <a href="#">View in Book</a>
+        </div>
+    </div>
+  </div>
+
+  <div class="col m12 l6">
+    <div class="card">
+     <div class="row" style="margin-bottom:0;">
+      <div class="card-content col s6">
+        <p><h5>pretend</h5></p>
+        <p><h6>
+        <i>transitive verb</i>
+        <br><br>
+        1: to give a false appearance of being, possessing, or performing
+        <br>
+        2a:  to make believe
+        <br>
+        2b:  to claim, represent, or assert falsely
+        <br><br>
+        <i>intransitive verb</i>
+        <br><br>
+        1:  to feign an action, part, or role especially in play
+        <br>
+        2:  to put in a claim
+
+        </h6></p>
+      </div>
+       <div class="card-image right col s6">
+        <img src="https://ak1.ostkcdn.com/images/products//bmmg/ent/P097360771442.JPG">
+      </div>
+      </div>
+      <div class="card-action">
+        <a href="#examples1">Sentence Examples</a>
+        <br>
+        <a href="#">View in Book</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col m12 l6">
+    <div class="card">
+     <div class="row" style="margin-bottom:0;">
+      <div class="card-content col s6">
+        <p><h5>pretend</h5></p>
+
+        <p><h6>
+        <i>transitive verb</i>
+        <br><br>
+        1: to give a false appearance of being, possessing, or performing
+        <br>
+        2a:  to make believe
+        <br>
+        2b:  to claim, represent, or assert falsely
+        <br><br>
+        <i>intransitive verb</i>
+        <br><br>
+        1:  to feign an action, part, or role especially in play
+        <br>
+        2:  to put in a claim
+       </div>
+       <div class="card-image right col s6">
+        <img src="http://www.kidsworldfun.com/images/ebooks/the-mouse-that-was-ebook.jpg">
+      </div>
+      </div>
+        <div class="card-action">
+          <a href="#examples2">Sentence Examples</a>
+          <br>
+          <a href="#">View in Book</a>
+        </div>
+    </div>
+  </div>
+
+  <div class="col m12 l6">
+    <div class="card">
+     <div class="row" style="margin-bottom:0;">
+      <div class="card-content col s6">
+        <p><h5>pretend</h5></p>
+
+        <p><h6>
+        <i>transitive verb</i>
+        <br><br>
+        1: to give a false appearance of being, possessing, or performing
+        <br>
+        2a:  to make believe
+        <br>
+        2b:  to claim, represent, or assert falsely
+        <br><br>
+        <i>intransitive verb</i>
+        <br><br>
+        1:  to feign an action, part, or role especially in play
+        <br>
+        2:  to put in a claim
+       </div>
+       <div class="card-image right col s6">
+        <img src="http://www.kidsworldfun.com/images/ebooks/waldo-and-the-desert-island-adventure-ebook.jpg">
+      </div>
+      </div>
+        <div class="card-action">
+          <a href="#examples2">Sentence Examples</a>
+          <br>
+          <a href="#">View in Book</a>
+        </div>
+    </div>
+  </div>
+  
+  <div class="col m12 l6">
+    <div class="card">
+     <div class="row" style="margin-bottom:0;">
+      <div class="card-content col s6">
+        <p><h5>pretend</h5></p>
+
+        <p><h6>
+        <i>transitive verb</i>
+        <br><br>
+        1: to give a false appearance of being, possessing, or performing
+        <br>
+        2a:  to make believe
+        <br>
+        2b:  to claim, represent, or assert falsely
+        <br><br>
+        <i>intransitive verb</i>
+        <br><br>
+        1:  to feign an action, part, or role especially in play
+        <br>
+        2:  to put in a claim
+       </div>
+       <div class="card-image right col s6">
+        <img src="https://s-media-cache-ak0.pinimg.com/564x/47/3d/4e/473d4e1b67881f1f6b10d6b896c1beaa.jpg">
+      </div>
+      </div>
+        <div class="card-action">
+          <a href="#examples2">Sentence Examples</a>
+          <br>
+          <a href="#">View in Book</a>
+        </div>
+    </div>
+  </div>
+
+  </div>
+  </article>
+ </div>
+
+
+ <div id="friend_list">
+  <header>
+  <h5><center>Your Friends:</center></h5>
+ </header>
+
+
+ <article>
+  <div class="row" style="margin: 0 15px;">
+
+  <div class="col m12 l6">
+    <div class="card">
+      <div class="row" style="margin-bottom: 0;">
+        <div class="card-image col s6">
+          <img src="images/blank_portrait.jpg">
+        </div>
+        <div class="card-content col s6">
+           <p><h5>Stan Register</h5></p>
+           <p><h6>Classmate</h6></p>
+        </div>
+       </div>
+        <div class="card-action">
+          <a href="#message">Send Message</a>
+          <a href="#books">Book List</a>
+        </div>
+      </div>
+    </div>
+   
+  <div class="col m12 l6">
+    <div class="card">
+      <div class="row" style="margin-bottom: 0;">
+        <div class="card-image col s6">
+          <img src="images/blank_portrait.jpg">
+        </div>
+        <div class="card-content col s6">
+           <p><h5>Gerard Dunn</h5></p>
+           <p><h6>Classmate</h6></p>
+        </div>
+       </div>
+        <div class="card-action">
+          <a href="#message">Send Message</a>
+          <a href="#books">Book List</a>
+        </div>
+      </div>
+    </div>
+  
+  <div class="col m12 l6">
+    <div class="card">
+      <div class="row" style="margin-bottom: 0;">
+        <div class="card-image col s6">
+          <img src="images/blank_portrait.jpg">
+        </div>
+        <div class="card-content col s6">
+           <p><h5>Janet Burrows</h5></p>
+           <p><h6>Classmate</h6></p>
+        </div>
+       </div>
+        <div class="card-action">
+          <a href="#message">Send Message</a>
+          <a href="#books">Book List</a>
+        </div>
+      </div>
+    </div>
+  
+  <div class="col m12 l6">
+    <div class="card">
+      <div class="row" style="margin-bottom: 0;">
+        <div class="card-image col s6">
+          <img src="images/blank_portrait.jpg">
+        </div>
+        <div class="card-content col s6">
+           <p><h5>Bob Jones</h5></p>
+           <p><h6>Classmate</h6></p>
+        </div>
+       </div>
+        <div class="card-action">
+          <a href="#message">Send Message</a>
+          <a href="#books">Book List</a>
+        </div>
+      </div>
+    </div>
+  
+  <div class="col m12 l6">
+    <div class="card">
+      <div class="row" style="margin-bottom: 0;">
+        <div class="card-image col s6">
+          <img src="images/blank_portrait.jpg">
+        </div>
+        <div class="card-content col s6">
+           <p><h5>Pam Matthews</h5></p>
+           <p><h6>Classmate</h6></p>
+        </div>
+       </div>
+        <div class="card-action">
+          <a href="#message">Send Message</a>
+          <a href="#books">Book List</a>
+        </div>
+      </div>
+    </div>
+  
+  <div class="col m12 l6">
+    <div class="card">
+      <div class="row" style="margin-bottom: 0;">
+        <div class="card-image col s6">
+          <img src="images/blank_portrait.jpg">
+        </div>
+        <div class="card-content col s6">
+           <p><h5>Jimmy Mujica</h5></p>
+           <p><h6>Classmate</h6></p>
+        </div>
+       </div>
+        <div class="card-action">
+          <a href="#message">Send Message</a>
+          <a href="#books">Book List</a>
+        </div>
+      </div>
+    </div>
+  
+  <div class="col m12 l6">
+    <div class="card">
+      <div class="row" style="margin-bottom: 0;">
+        <div class="card-image col s6">
+          <img src="images/blank_portrait.jpg">
+        </div>
+        <div class="card-content col s6">
+           <p><h5>Maggie Wilson</h5></p>
+           <p><h6>Classmate</h6></p>
+        </div>
+       </div>
+        <div class="card-action">
+          <a href="#message">Send Message</a>
+          <a href="#books">Book List</a>
+        </div>
+      </div>
+    </div>
+  
+  <div class="col m12 l6">
+    <div class="card">
+      <div class="row" style="margin-bottom: 0;">
+        <div class="card-image col s6">
+          <img src="images/blank_portrait.jpg">
+        </div>
+        <div class="card-content col s6">
+           <p><h5>Billy Essex</h5></p>
+           <p><h6>Classmate</h6></p>
+        </div>
+       </div>
+        <div class="card-action">
+          <a href="#message">Send Message</a>
+          <a href="#books">Book List</a>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+  </article>
+ </div>
+
+  <footer>
+  <br>
+  Page created by Temporary Sidecar, 2017.
+  </footer>
+  <footer></footer>
+  </div>
+
+
+
+<!-- Modal Structure - the items below control the popups that come from a book click. The div id ties directly into the href tag on the individual carousel class items. -->
+<!-- More information on modal interface here: http://materializecss.com/modals.html -->
+
+<!-- SUGGESTED SECTION MODALS HERE -->
+
+  <div id="suggested1" class="modal">
+    <div class="modal-content">
+      <h4>Tow-Truck Pluck</h4>
+      <h5>by Annie M.G. Schmidt and Fiep Westendorp</h5>
+      <p>There's a room free in the Pill Building. Up on top, in the tower. When Pluck finds out, he drives straight there in his red tow truck. Finally he has a home. 
+	 And right away he makes lots of new friends: Zaza the cockroach and Dolly the pigeon, Mr Penn, the Stampers and Aggie. Pluck's adventures can begin.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="suggested2" class="modal">
+    <div class="modal-content">
+      <h4>Turtle's Song</h4>
+      <h5>Illustrated by Kim Toft, Story by Alan Brown</h5>
+      <p>      
+
+	I am a Turtle. 
+	My eyes are black, my shell is green. 
+	Wide ocean calls me, as I lie curled in the dark. 
+	Tides roar in my blood, surf pounds in my heart. A lyrical journey of the life of a Green Turtle from hatchling beneath the sand of a coral beach, through wanderings at sea, to adulthood and returning to lay eggs of it's own. Award winning illustrator Kim Toft's magnificent silk painting perfectly capture the precarious life of the Green Turtle, while author Alan Brown's poignant, mythical story sounds a hymn to this ancient but now endangered creature.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="suggested6" class="modal">
+    <div class="modal-content">
+      <h4>Moby Dick</h4>
+      <h5>by Herman Melville</h5>
+      <p>      
+In 1841, young Ishmael signs up for service abroad the Pequod, a whaler sailing out of New Bedford. The ship is under the command of Captain Ahab, a strict disciplinarian who exhorts his men to find Moby Dick, the great white whale. Ahab lost his his leg to that creature and is desperate for revenge.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="reader.html?passedbook=books/0/book.epub" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="suggested3" class="modal">
+    <div class="modal-content">
+      <h4>A Fish Out of Water</h4>
+      <h5>by Helen Palmer</h5>
+      <p>      
+
+In this beloved Beginner Book written by Mrs. Dr. Seuss (aka Helen Palmer), a young boy hilariously learns the consequences of not following instructions when he feeds too much to his goldfish—causing it to grow as big as a whale! With delightfully retro illustrations by P.D. Eastman (Go, Dog. Go!), 
+the message of the book—that getting a pet is a big responsibility—is as true today as it was when the book was published in 1961. Perfect for beginning readers and read-alouds—and anyone getting a pet, especially a fish—it's ideal for birthdays, holidays, and happy occasions of all kinds!
+<br><br>
+Launched in 1957 with The Cat in the Hat and written specifically for emergent readers, Beginner Books combine an exacting blend of simple words and fun pictures that encourage children to read—all by themselves.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="suggested4" class="modal">
+    <div class="modal-content">
+      <h4>Secret Mouse</h4>
+      <h5>by Elizabeth Ann Patterson</h5>
+      <p>      
+      Change is hard for a little mouse forced out into the big world. A fun rhyming book full of illustrations and a happy ending. A perfect bedtime story for all ages.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="suggested5" class="modal">
+    <div class="modal-content">
+      <h4>Smurf's Graphic Novels: The Smurf King</h4>
+      <h5>by Yvan Delporte</h5>
+      <p>      
+
+When Papa Smurf leaves the Village on an errand, the Smurfs are left without their leader. The Smurfs decide to vote for a new leader while Papa Smurf is gone, but each Smurf votes for himself! Before long, a smurf names himself King Smurf, ruler of all of Smurf Village! Can these Smurfs get their act together? Or will King Smurf run his "Empire" straight into the ground? Available in Softcover and Hardcover editions.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+<!-- HISTORY SECTION MODALS HERE-->
+
+  <div id="history1" class="modal">
+    <div class="modal-content">
+      <h4>The Very Bad Bunny</h4>
+      <h5>by Marilyn Sadler</h5>
+      <p>
+	The Funnybunnies all think that P.J. is the worst bunny they have ever seen, until his cousin Binky comes for a visit.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Take a Quiz</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Review Vocabulary</a>
+    </div>
+  </div>
+
+  <div id="history2" class="modal">
+    <div class="modal-content">
+      <h4>Beetle Boy</h4>
+      <h5>by M.G. Leonard</h5>
+      <p>
+
+      Darkus Cuttle's dad mysteriously goes missing from his job as Director of Science at the Natural History Museum. Vanished without a trace! From a locked room! So Darkus moves in with his eccentric Uncle Max and next door to Humphrey and Pickering, two lunatic cousins with an enormous beetle infestation. Darkus soon discovers that the beetles are anything but ordinary. They're an amazing, intelligent, super species and they're in danger of being exterminated. It's up to Darkus and his friends to save the beetles. But they're up against an even more terrifying villain -- mad scientist of fashion, haute couture villainess Lucretia Cutter. Lucretia has an alarming interest in insects and dastardly plans for the bugs. She won't let anyone or anything stop her, including Darkus's dad, who she has locked up in her dungeons! The beetles and kids join forces to rescue Mr. Cuttle and thwart Lucretia.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Take a Quiz</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Review Vocabulary</a>
+    </div>
+  </div>
+
+  <div id="history6" class="modal">
+    <div class="modal-content">
+      <h4>The Wizard of Oz</h4>
+      <h5>by Frank Baum</h5>
+      <p>
+
+When a tornado rips through Kansas, Dorothy and her dog, Toto, are whisked away in their house to the magical land of Oz. They follow the Yellow Brick Road toward the Emerald City to meet the Wizard, and en route they meet a Scarecrow that needs a brain, a Tin Man missing a heart, and a Cowardly Lion who wants courage.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="reader.html?passedbook=books/1/book.epub" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+     </div>
+  </div>
+
+  <div id="history3" class="modal">
+    <div class="modal-content">
+      <h4>Tintin and Alph-Art (The Adventures of Tintin: Original Classic)</h4>
+      <h5>by Herge</h5>
+      <p>
+
+      The classic graphic novel. The unfinished final adventure of Tintin featuring Herge's black-and-white sketches. Opera singer Bianca Castafiore has a guru: Endaddine Akass is handing his advice out to everyone, but Tintin doesn't buy it-especially when he realizes that Akass might be connected to the death of the owner of an art gallery, who had been on his way to see Tintin when he died.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Take a Quiz</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Review Vocabulary</a>
+     </div>
+  </div>
+
+  <div id="history4" class="modal">
+    <div class="modal-content">
+      <h4>The Third Jungle Book</h4>
+      <h5>by Nancy Malick</h5>
+      <p>
+
+      Recaptures the spirit and tone of Kipling's original works to continue the story of Mowgli and his adventures in the jungle among his animal teachers, friends, and foes.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Take a Quiz</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Review Vocabulary</a>
+    </div>
+  </div>
+
+  <div id="history5" class="modal">
+    <div class="modal-content">
+      <h4>Baby Bear, Baby Bear, What Do You See?</h4>
+      <h5>by Bill Martin Jr.</h5>
+      <p>
+
+      "Baby Bear, Baby Bear, What Do You See"? is the final collaboration fromthis bestselling author-illustrator team.Young readers will enjoy Baby Bear's quest to findMama, and they'll revel in identifying each of the native North American animals that appear along the way. The central focus on the special bond between mama and baby makes a fitting finale to a beloved series. Now in board-book format for the youngest readers.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Take a Quiz</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Review Vocabulary</a>
+    </div>
+  </div>
+
+<!-- IN PROGRESS MODALS HERE -->
+
+  <div id="inprogress1" class="modal">
+    <div class="modal-content">
+      <h4>Make Way for Ducklings</h4>
+      <h5>by Robert McCloskey</h5>
+      <p>
+
+Mrs. Mallard was sure that the pond in the Boston Public Gardens would be a perfect place for her and her eight ducklings to live.  The problem was how to get them there through the busy streets of Boston.  But with a little help from the Boston police, Mrs. Mallard and Jack, Kack, Lack, Nack, Ouack, Pack, and Quack arive safely at their new home.  This brilliantly illustrated, amusingly observed tale of Mallards on the move has won the hearts of generations of readers.  Awarded the Caldecott Medal for the most distinguished American picture book for children in 1941, it has since become a favorite of millions.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="inprogress2" class="modal">
+    <div class="modal-content">
+      <h4>Pierre: A Cautionary Tale in Five Chapters and a Prologue</h4>
+      <h5>by Maurice Sendak</h5>
+      <p>
+
+Pierre&rsquo;s &lsquo;I don&rsquo;t care!&rsquo; intrigues a hungry lion. &lsquo;A story with a moral air about Pierre, who learned to care.&rsquo;
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="inprogress6" class="modal">
+    <div class="modal-content">
+      <h4>1984</h4>
+      <h5>by George Orwell</h5>
+      <p>
+
+The year 1984 has come and gone, but George Orwell's prophetic, nightmarish vision in 1949 of the world we were becoming is timelier than ever. 1984 is still the great modern classic of "negative utopia" -a startlingly original and haunting novel that creates an imaginary world that is completely convincing, from the first sentence to the last four words. No one can deny the novel's hold on the imaginations of whole generations, or the power of its admonitions -a power that seems to grow, not lessen, with the passage of time.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="reader.html?passedbook=https://ebooks.adelaide.edu.au/o/orwell/george/o79n/contents.html" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="inprogress3" class="modal">
+    <div class="modal-content">
+      <h4>Mr. Brown Can Moo, Can You?</h4>
+      <h5>by Dr. Seuss</h5>
+      <p>
+
+Kids will love this noise-filled Bright and Early Book classic from the one and only Dr. Seuss! Mr. Brown is a sound-making wonder! He can hoo hoo like an owl and buzz buzz like a bee. It is so much fun to make noises that you hear every day, like moo and tick-tock. But stranger sounds are fun to make, too . . . like the pip of a goldfish kiss and the grum grum of a hippo chewing gum. Encouraging imaginative play while learning to read, Mr. Brown Can Moo! Can You? will keep kids laughing (when they’re not tick-tocking).
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="inprogress4" class="modal">
+    <div class="modal-content">
+      <h4>Madeline and the Gypsies</h4>
+      <h5>by Ludwig Bemelmans</h5>
+      <p>
+
+The Madeline books are among the most honored children's books of all time. Join Madeline in another adventure when she and Pepito run off to join the carnival with a band of traveling gypsies! At first they're having the time of their lives—they don't have to go to school, brush their teeth, or ever go to sleep. But soon Madeline and Pepito start to feel homesick. Leave it to clever Miss Clavel to find Madeline and Pepito and bring them home.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="inprogress5" class="modal">
+    <div class="modal-content">
+      <h4>Harry Potter and the Cursed Child</h4>
+      <h5>by J.K. Rowling</h5>
+      <p>
+
+While Harry grapples with a past that refuses to stay where it belongs, his youngest son Albus must struggle with the weight of a family legacy he never wanted. As past and present fuse ominously, both father and son learn the uncomfortable truth: sometimes, darkness comes from unexpected places."
+  
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+<!-- YOUR LIBRARY MODALS HERE -->
+
+  <div id="library1" class="modal">
+    <div class="modal-content">
+      <h4>Go Dog Go!</h4>
+      <h5>by P.D. Eastman</h5>
+      <p>
+
+Reading goes to the dogs in this timeless Beginner Book edited by Dr. Seuss. From big dogs and little dogs to red, green, and blue dogs, dogs going up and dogs going fast . . . who knew dogs were so busy? And laughter will ensue at the repeated question “Do you like my hat?” Like P. D. Eastman’s classic Are You My Mother? Go, Dog. Go! has been a go-to favorite for over fifty years, leaving audiences of all breeds wagging their tails with delight.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="library2" class="modal">
+    <div class="modal-content">
+      <h4>Tyrone The Big Bad Bully</h4>
+      <h5>by Hans Wilhelm</h5>
+      <p>
+
+Tyrone the horrible uses his big size to bully and pick on little Boland.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="library6" class="modal">
+    <div class="modal-content">
+      <h4>Little Women</h4>
+      <h5>by Loisa May Alcott</h5>
+      <p>
+
+Following the lives of four sisters on a journey out of adolescence, Louisa May Alcott's Little Women explores the difficulties associated with gender roles in a Post-Civil War America.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="reader.html?passedbook=books/3/book.epub" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="library7" class="modal">
+    <div class="modal-content">
+      <h4>The Tale of Peter Rabit</h4>
+      <h5>by Beatrix Potter</h5>
+      <p>
+
+The Tale of Peter Rabbit is a British children's book written and illustrated by Beatrix Potter that follows mischievous and disobedient young Peter Rabbit as he is chased about the garden of Mr. McGregor. He escapes and returns home to his mother, who puts him to bed after dosing him with camomile tea.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="reader.html?passedbook=books/4/book.html" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="library3" class="modal">
+    <div class="modal-content">
+      <h4>Waldo and the Desert Island Adventure</h4>
+      <h5>by Hans Wilhelm</h5>
+      <p>
+
+Michael and his dog Waldo, walking along a rainy beach, pool their imaginations to share a possible adventure involving a band of pirates and several monsters.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="library4" class="modal">
+    <div class="modal-content">
+      <h4></h4>
+      <h5>by Ludwig Bemelmans</h5>
+      <p>
+
+The Madeline books are among the most honored children's books of all time. Join Madeline in another adventure when she and Pepito run off to join the carnival with a band of traveling gypsies! At first they're having the time of their lives—they don't have to go to school, brush their teeth, or ever go to sleep. But soon Madeline and Pepito start to feel homesick. Leave it to clever Miss Clavel to find Madeline and Pepito and bring them home.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+  <div id="library5" class="modal">
+    <div class="modal-content">
+      <h4>Madeline and the Gypsies</h4>
+      <h5>by Ludwig Bemelmans</h5>
+      <p>
+
+The Madeline books are among the most honored children's books of all time. Join Madeline in another adventure when she and Pepito run off to join the carnival with a band of traveling gypsies! At first they're having the time of their lives—they don't have to go to school, brush their teeth, or ever go to sleep. But soon Madeline and Pepito start to feel homesick. Leave it to clever Miss Clavel to find Madeline and Pepito and bring them home.
+
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Read this Book!</a>
+    </div>
+  </div>
+
+
+<!-- Vocabulary list modals -->
+
+<!-- Modal Structure - the items below control the popups that come from a vocabulary click. The div id ties directly into the href tag on the individual carousel class items. -->
+<!-- More information on modal interface here: http://materializecss.com/modals.html -->
+
+<!-- DEFINITION EXAMPLE SECTION MODALS HERE -->
+
+  <div id="examples1" class="modal">
+    <div class="modal-content">
+    <h5>Examples of the word in a sentence:</h5>
+        He had a big stain on his shirt, but I pretended not to notice.
+        <br>The children pretended to be asleep.
+        <br>She looked like she was enjoying the party but she was just pretending.
+        <br>It was a mistake, and to pretend otherwise would be foolish.
+        <br>The children were pretending to be animals.
+        <br>He pretended to make a phone call.
+        <br>Let's just pretend for a moment. I'm your boss. What would you say to me?
+    </div>
+  </div>
+
+  <div id="examples2" class="modal">
+    <div class="modal-content">
+    <h5>Examples of the word in a sentence:</h5>
+    The author avoids making moral judgments.
+    <br>Each story teaches an important moral lesson.
+    <br>He felt that he had a moral obligation to help the poor.
+    <br>We're confident she has the moral fiber to make the right decision.
+    <br>Their behavior was not moral.
+    <br>Animals are not moral creatures and are not responsible for their actions.
+    </div>
+  </div>
+
+  <div id="examples3" class="modal">
+    <div class="modal-content">
+    <h5>Examples of the word in a sentence:</h5>
+        He had a big stain on his shirt, but I pretended not to notice.
+        <br>The children pretended to be asleep.
+        <br>She looked like she was enjoying the party but she was just pretending.
+        <br>It was a mistake, and to pretend otherwise would be foolish.
+        <br>The children were pretending to be animals.
+        <br>He pretended to make a phone call.
+        <br>Let's just pretend for a moment. I'm your boss. What would you say to me?
+    </div>
+  </div>
+
+  <div id="examples4" class="modal">
+    <div class="modal-content">
+    <h5>Examples of the word in a sentence:</h5>
+        He had a big stain on his shirt, but I pretended not to notice.
+        <br>The children pretended to be asleep.
+        <br>She looked like she was enjoying the party but she was just pretending.
+        <br>It was a mistake, and to pretend otherwise would be foolish.
+        <br>The children were pretending to be animals.
+        <br>He pretended to make a phone call.
+        <br>Let's just pretend for a moment. I'm your boss. What would you say to me?
+    </div>
+  </div>
+
+ <div id="examples5" class="modal">
+    <div class="modal-content">
+    <h5>Examples of the word in a sentence:</h5>
+        He had a big stain on his shirt, but I pretended not to notice.
+        <br>The children pretended to be asleep.
+        <br>She looked like she was enjoying the party but she was just pretending.
+        <br>It was a mistake, and to pretend otherwise would be foolish.
+        <br>The children were pretending to be animals.
+        <br>He pretended to make a phone call.
+        <br>Let's just pretend for a moment. I'm your boss. What would you say to me?
+    </div>
+  </div>
+
+  <div id="examples6" class="modal">
+    <div class="modal-content">
+    <h5>Examples of the word in a sentence:</h5>
+        He had a big stain on his shirt, but I pretended not to notice.
+        <br>The children pretended to be asleep.
+        <br>She looked like she was enjoying the party but she was just pretending.
+        <br>It was a mistake, and to pretend otherwise would be foolish.
+        <br>The children were pretending to be animals.
+        <br>He pretended to make a phone call.
+        <br>Let's just pretend for a moment. I'm your boss. What would you say to me?
+    </div>
+  </div>
+
+  <div id="examples7" class="modal">
+    <div class="modal-content">
+    <h5>Examples of the word in a sentence:</h5>
+        He had a big stain on his shirt, but I pretended not to notice.
+        <br>The children pretended to be asleep.
+        <br>She looked like she was enjoying the party but she was just pretending.
+        <br>It was a mistake, and to pretend otherwise would be foolish.
+        <br>The children were pretending to be animals.
+        <br>He pretended to make a phone call.
+        <br>Let's just pretend for a moment. I'm your boss. What would you say to me?
+    </div>
+  </div>
+
+  <div id="examples8" class="modal">
+    <div class="modal-content">
+    <h5>Examples of the word in a sentence:</h5>
+        He had a big stain on his shirt, but I pretended not to notice.
+        <br>The children pretended to be asleep.
+        <br>She looked like she was enjoying the party but she was just pretending.
+        <br>It was a mistake, and to pretend otherwise would be foolish.
+        <br>The children were pretending to be animals.
+        <br>He pretended to make a phone call.
+        <br>Let's just pretend for a moment. I'm your boss. What would you say to me?
+    </div>
+  </div>
+
+<!-- Modal Structure - the items below control the popups that come from a friend click. The div id ties directly into the href tag on the individual carousel class items. -->
+<!-- More information on modal interface here: http://materializecss.com/modals.html -->
+
+  <div id="books" class="modal">
+    <div class="modal-content">
+    <center>
+    <h5>Currently Reading:</h5>
+    <img src="https://www.pushkinpress.com/wp-content/uploads/getimage-88-250x350.jpeg" style="width:125px;height:175px;"></a></a>
+    <img src="http://www.teaching.com.au/resources/static/main/IMAGE/TB167B.JPG" style="width:125px;height:175px;"></a> 
+    <img src="http://elizabethannpatterson.com/uploads/3/4/9/2/34927408/__4970415.jpg?250" style="width:125px;height:175px;"></a>
+    <img src="https://s-media-cache-ak0.pinimg.com/564x/47/3d/4e/473d4e1b67881f1f6b10d6b896c1beaa.jpg" style="width:125px;height:175px;"></a>
+    <img src="https://ak1.ostkcdn.com/images/products//bmmg/ent/P097360771442.JPG" style="width:125px;height:175px;"></a>
+    </center>
+   </div>
+  </div>
+
+  <div id="message" class="modal">
+    <div class="modal-content">
+        <h5>Send Message:</h5>
+        <textarea rows="8" cols="50">
+        </textarea>
+
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Send Message</a>
+    </div>
+  </div>
+</body>   
+</html>

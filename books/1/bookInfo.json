@@ -1,0 +1,8 @@
+{
+  'name':'The Wizard of Oz',
+  'location':'books/1/book.epub',
+  'description':null,
+  'coverLocation':'books/1/cover.jpg',
+  'audioLocation':false,
+  'videoLocation':false
+}

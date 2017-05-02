@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FlypPage - Book Name</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- JQUERY JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <!-- Materialize JS-->
+    <script src="./js/materialize.js"></script>
+
+    <!-- Epubjs Renderer for .epub support -->
+    <script src="./js/epub.min.js"></script>
+    <script src="./js/zip.min.js"></script>
+    
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="./css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      html,body{
+        width: 100%;
+        height: 100%;
+      }
+      .container {
+        height: 90%;
+        min-width: 200px;
+        min-height: 200px;
+      }
+      .controls-container {
+        height: 10%;
+        margin-bottom: 0;
+      }
+      #bookRenderArea {
+        border: none;
+        width: 100%;
+        height: 100%;
+      }
+      .book-container {
+        height: 90%;
+        width: 90%;
+      }
+      .render-container {
+        height: 100%;
+        width: 100%;
+      }
+      .arrow {
+        font-size: 4em;
+        color: #E2E2E2;
+        font-family: arial, sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        border: 1px solid #ddd;
+        border-radius: 5%;
+      }
+
+      .arrow:hover {
+         color: #777;
+         background: #eee;
+      }
+
+      .arrow:active {
+        color: #000;
+        background: #aaa;
+      }
+      .center {
+        margin: 0 auto;
+      }
+    </style>
+    <script>
+      "use strict";
+      
+      $(document).ready(function() {
+        $(".button-collapse").sideNav();
+      });
+      
+      var Book;
+      var url = window.location.href;
+      var book = url.split("passedbook=").pop();
+      var protocol = book.split("://").shift();
+      var extension = book.split(".").pop();
+      if (extension == "epub") {
+        Book = ePub(book, {
+          width: false,
+          height: false,
+          spreads : false
+        });
+      } else if (extension == "html" || extension == "htm" || protocol == "http" || protocol == "https") {
+      }
+    </script>
+  </head>
+  
+  <body>
+   <nav>
+    <div class="nav-wrapper brown darken-4">
+     <img src="images/flyppage_logo_white2.png">
+     <a href="#" data-activates="sidebar-links" class="button-collapse">
+       <i class="material-icons">menu</i>
+     </a>
+     <ul class="right hide-on-med-and-down brown darken-4">
+       <li><a target="_self" href="index.html"><i class="material-icons">home</i></a></li>
+     </ul>
+     <ul id="sidebar-links" class=" side-nav brown darken-4 center">
+       <li><a target="_self" class="white-text" href="index.html"><i class="material-icons white-text">home</i>Home</a></li>
+     </ul>
+    </div>
+  </nav>
+    <div class="container valign-wrapper center-align">
+      <div class="book-container center">
+        <div class="render-container">
+        <div id="bookRenderArea"> </div>
+        </div>
+      </div>
+    </div>
+      <div class="row controls-container">
+        <div class="arrow col s5 center-align" onclick="Book.prevPage();">‹</div>
+        <div class="arrow col s5 center-align right" onclick="Book.nextPage();">›</div>
+      </div>
+
+    <script>
+      if (extension == "epub") {
+      Book.renderTo("bookRenderArea");
+      Book.on('renderer:chapterDisplayed',function(location){
+        // Seems to work for narrow devices for no good reason
+        $('[id^="epubjs-iframe"]').width('99%');
+        // Would also load things to do with chapter quiz here
+      });
+      Book.on('renderer:visibleRangeChanged renderer:resized',function(location){
+        // Seems to work for narrow devices for no good reason
+        $('[id^="epubjs-iframe"]').width('99%');
+      });
+      } else if (extension == "html" || extension == "htm" || protocol == "http" || protocol == "https") {
+        $('.arrow').remove();
+        $('.controls-container').remove();
+        $('.book-container').height('100%');
+        $('.book-container').width('100%');
+        $('.container').attr('margin','0');
+        $('<iframe src="'+book+'" frameborder="0" width=100% height=100% scrolling="yes" id="bookFrame"></iframe>')
+          .appendTo('#bookRenderArea');
+      }
+    </script>
+  </body>
+</html>

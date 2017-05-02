@@ -1,0 +1,8 @@
+{
+  'name':'1984',
+  'location':'https://ebooks.adelaide.edu.au/o/orwell/george/o79n/contents.html',
+  'description':null,
+  'coverLocation':'books/2/cover.png',
+  'audioLocation':false,
+  'videoLocation':false
+}

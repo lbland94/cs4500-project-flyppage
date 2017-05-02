@@ -1,0 +1,8 @@
+{
+  'name':'The Tale of Peter Rabbit',
+  'location':'books/4/book.html',
+  'description':null,
+  'coverLocation':'books/4/cover.jpg',
+  'audioLocation':false,
+  'videoLocation':false
+}

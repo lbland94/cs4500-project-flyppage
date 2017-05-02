@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+	<title>FlypPage - Login</title>
+        <link rel="stylesheet" href="./css/materialize.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="./js/materialize.min.js"></script>
+	<style>
+	.container {
+		text-align:center;
+	}
+	html, body {
+		width: 100%;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src = "images/flyppage_logo.png" style = "width:300px">
+		<div class = "row">
+			<form class = "col s12" id = "signup" method = "post" onsubmit = "return testUserName()" action="/php/users.php">
+				<div class = "row">
+					<div class="col m3 hide-on-small-only"></div>
+					<div class = "input-field col s12 m6">
+						<input id = "username" name = "username" type = "text" class = "validate" required>
+						<label for = "username">Username</label>
+					</div>
+				</div>
+				<div class = "row">
+					<div class="col m3 hide-on-small-only"></div>
+					<div class = "input-field col s12 m6">
+						<input id = "pwd" name = "pwd" type = "password" class = "validate" required>
+						<label for = "pwd">Password</label>
+					</div>
+				</div>
+				<br>
+				<input type="hidden" name="action" value="login">
+				<button class="btn waves-effect waves-light" type="submit" id = "register" name="login">Login</button>
+			</form>
+				<div class = "row">
+					<div class="col m3 hide-on-small-only"></div>
+					<div class = "input-field col s12 m6">
+                     <fieldset>
+                    <!-- calls the signup page for new users -->
+                    <p>Don't have an account?</p>
+                    <a target="_self" href="signup.html">Sign Up!</a>
+                </fieldset>
+                </div>
+                </div>
+		</div>
+	</div>
+  <script>
+	function testUserName() {
+    // test to see if user is the teacher
+    var userName = document.getElementById("userName").value;
+
+    // using window.open to call another web page
+    // redirects to teacher page or student page.
+    if (userName == "Teacher" || userName == "teacher") {
+        window.open("./teacher.html", "_self");
+    }
+    else
+        window.open("./index.html", "_self");
+
+    return false;
+}
+</script>
+</body>

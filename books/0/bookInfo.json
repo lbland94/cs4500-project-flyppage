@@ -1,0 +1,8 @@
+{
+  'name':'Moby Dick',
+  'location':'books/0/book.epub',
+  'description':null,
+  'coverLocation':'books/0/cover.jpg',
+  'audioLocation':false,
+  'videoLocation':false
+}

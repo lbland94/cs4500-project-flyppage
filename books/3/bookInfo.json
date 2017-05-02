@@ -1,0 +1,8 @@
+{
+  'name':'Little Women',
+  'location':'books/3/book.epub',
+  'description':null,
+  'coverLocation':'books/3/cover.jpg',
+  'audioLocation':false,
+  'videoLocation':false
+}

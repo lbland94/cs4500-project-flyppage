@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Allows teacher to add a quiz -->
+    <title>Add a Quiz </title>
+
+    <link rel="stylesheet" href="./css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="./js/materialize.min.js"></script>
+
+    <style>
+        .container {
+            text-align:center;
+        }
+        html, body {
+            width: 100%;
+        }
+    </style>
+    <script>
+      $(document).ready(function() {
+        $('select').material_select();
+       });
+     </script>
+</head>
+<body>
+
+<div class="container">
+
+    <img src = "./images/temporarySidecar.png" style = "width:300px">
+
+    <div class = "row">
+
+        <form class = "col s12" id = "addQuiz" method = "post" onsubmit = "" action="http://google.com">
+
+            <div class = "row">
+                <div class="col m3 hide-on-small-only"></div>
+                <div class = "input-field col s12 m6">
+                  <select id="book" name="book-id">
+                    <option value="NULL" disabled selected value>Which book is this question for?</option>
+                    <option value="0">Moby Dick</option>
+                  </select>
+                  <label for = "book">Book</label>
+              </div>
+            </div>
+            
+            <div class = "row">
+                <div class="col m3 hide-on-small-only"></div>
+                <div class = "input-field col s12 m6">
+                  <select id="chapter" name="chapter-num">
+                    <option value="NULL" disabled selected value>Which chapter is this question for?</option>
+                  </select>
+                  <label for = "chapter">Chapter</label>
+              </div>
+            </div>
+            
+            <div class = "row">
+                <div class="col m3 hide-on-small-only"></div>
+                <div class = "input-field col s12 m6">
+                    <textarea id="question" class="materialize-textarea" class="validate" required></textarea>
+                    <label for = "question">Quiz Question </label>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class="col m3 hide-on-small-only"></div>
+                <div class = "input-field col s12 m6">
+                    <input id="correctAns" name = "correctAns" type="text" class="validate" required>
+                    <label for="correctAns" class="active">Enter correct answer</label>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class="col m3 hide-on-small-only"></div>
+                <div class = "input-field col s12 m6">
+                    <input id = "option1" name = "option1" type = "text" class = "validate" required>
+                    <label for = "option1">Other option 1</label>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class="col m3 hide-on-small-only"></div>
+                <div class = "input-field col s12 m6">
+                    <input id = "option2" name = "option2" type = "text" class = "validate">
+                    <label for = "option2">Other option 2</label>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class="col m3 hide-on-small-only"></div>
+                <div class = "input-field col s12 m6">
+                    <input id = "option3" name = "option3" type = "text" class = "validate">
+                    <label for = "option3">Other option 3</label>
+                </div>
+            </div>
+
+    </div>
+
+    <br>
+    <button class="btn waves-effect waves-light" type="submit" id = "register" name="register">Submit</button>
+    </form>
+</div>
+</div>
+
+<script>
+  for(var i = 1; i < 55; i++) {
+    var option = document.createElement("OPTION");
+    chapter.options.add(option);
+    option.text = i;
+    option.value = i;
+  }
+</script>
+</body>
+</html>

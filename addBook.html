@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Book </title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="./js/materialize.min.js"></script>
+
+    <style>
+        .container {
+            text-align:center;
+            padding-bottom: 20px;
+        }
+        html, body {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <img src = "./images/temporarySidecar.png" style = "width:300px">
+
+    <div class = "row">
+        <br>
+
+        <form class = "col s12" id = "addBook" method = "post" onsubmit = "" action="http://google.com">
+
+          <div class = "row">
+            <div class="col m3 hide-on-small-only"></div>
+            <div class="file-field input-field col s12 m6">
+              <div class="btn">
+                <span>Book</span>
+                <input type="file" name="book-location" required>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class="col m3 hide-on-small-only"></div>
+            <div class="file-field input-field col s12 m6">
+              <div class="btn">
+                <span>Cover</span>
+                <input type="file" name="cover-location" required>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+          </div>
+
+            <div class = "row">
+                <div class="col m3 hide-on-small-only"></div>
+                <div class = "input-field col s12 m6">
+                    <input id="name" name = "name" type="text" class="validate" required>
+                    <label for="name" class="active">Book</label>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class="col m3 hide-on-small-only"></div>
+                <div class = "input-field col s12 m6">
+                    <input id = "author" name = "author" type = "text" class = "validate" required>
+                    <label for = "author">Author</label>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class="col m3 hide-on-small-only"></div>
+                <div class = "input-field col s12 m6">
+                    <textarea id="description" class="materialize-textarea" class="validate" required></textarea>
+                    <label for = "description">Book Description </label>
+                </div>
+                </div>
+            </div>
+
+          <div class = "row">
+            <div class="col m3 hide-on-small-only"></div>
+            <div class="file-field input-field col s12 m6">
+              <div class="btn">
+                <span>Audio</span>
+                <input type="file" name="audio-location" required>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class="col m3 hide-on-small-only"></div>
+            <div class="file-field input-field col s12 m6">
+              <div class="btn">
+                <span>Video</span>
+                <input type="file" name="video-location" required>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+          </div>
+
+            <button class="btn waves-effect waves-light" type="submit" id = "upload" name="upload">Add Book</button>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
