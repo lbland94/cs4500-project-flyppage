@@ -18,7 +18,7 @@
 	<div class="container">
 		<img src = "images/flyppage_logo.png" style = "width:300px">
 		<div class = "row">
-			<form class = "col s12" id = "signup" method = "post" onsubmit = "return testUserName()" action="/php/users.php">
+			<form class = "col s12" id = "login" method = "post" onsubmit="return testUserName()"  action="/php/users.php">
 				<div class = "row">
 					<div class="col m3 hide-on-small-only"></div>
 					<div class = "input-field col s12 m6">
@@ -35,7 +35,7 @@
 				</div>
 				<br>
 				<input type="hidden" name="action" value="login">
-				<button class="btn waves-effect waves-light" type="submit" id = "register" name="login">Login</button>
+				<button class="btn waves-effect waves-light" type="submit" id="login" name="login">Login</button>
 			</form>
 				<div class = "row">
 					<div class="col m3 hide-on-small-only"></div>
@@ -50,19 +50,15 @@
 		</div>
 	</div>
   <script>
-	function testUserName() {
+  function testUserName() {
     // test to see if user is the teacher
-    var userName = document.getElementById("userName").value;
-
-    // using window.open to call another web page
-    // redirects to teacher page or student page.
+    var userName = document.getElementById("username").value;
     if (userName == "Teacher" || userName == "teacher") {
-        window.open("./teacher.html", "_self");
+        window.location = "teacher.html";
+    } else {
+        window.location = "index.html";
     }
-    else
-        window.open("./index.html", "_self");
-
     return false;
-}
+  }
 </script>
 </body>

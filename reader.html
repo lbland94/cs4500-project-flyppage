@@ -75,6 +75,8 @@
     <script>
       "use strict";
       
+      var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      var android = /Android/i.test(navigator.userAgent);
       $(document).ready(function() {
         $(".button-collapse").sideNav();
       });
@@ -85,11 +87,6 @@
       var protocol = book.split("://").shift();
       var extension = book.split(".").pop();
       if (extension == "epub") {
-        Book = ePub(book, {
-          width: false,
-          height: false,
-          spreads : false
-        });
       } else if (extension == "html" || extension == "htm" || protocol == "http" || protocol == "https") {
       }
     </script>
@@ -124,15 +121,33 @@
 
     <script>
       if (extension == "epub") {
-      Book.renderTo("bookRenderArea");
+        var width = $('#bookRenderArea').width();
+        var height = $('#bookRenderArea').height();
+        if (!iOS) {
+          width = false; height = false;
+        }
+        Book = ePub(book, {
+          width: width,
+          height: height,
+          spreads : false
+        });
+      Book.renderTo("bookRenderArea",{width:300,height:400});
       Book.on('renderer:chapterDisplayed',function(location){
         // Seems to work for narrow devices for no good reason
-        $('[id^="epubjs-iframe"]').width('99%');
+        if (!iOS) {
+          $('[id^="epubjs-iframe"]').width('99%');
+        }
         // Would also load things to do with chapter quiz here
       });
       Book.on('renderer:visibleRangeChanged renderer:resized',function(location){
-        // Seems to work for narrow devices for no good reason
-        $('[id^="epubjs-iframe"]').width('99%');
+        if (!android) {
+          var width = $('#bookRenderArea').width();
+          var height = $('#bookRenderArea').height();
+          this.resize(width, height, false);
+        }
+        if (!iOS) {
+          $('[id^="epubjs-iframe"]').width('99%');
+        }
       });
       } else if (extension == "html" || extension == "htm" || protocol == "http" || protocol == "https") {
         $('.arrow').remove();
