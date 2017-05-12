@@ -18,7 +18,7 @@
 	<div class="container">
 		<img src = "images/flyppage_logo.png" style = "width:300px">
 		<div class = "row">
-			<form class = "col s12" id = "signup" method = "post" onsubmit = "return validate()" action="/php/users.php">
+			<form class = "col s12" id = "signup" method = "post" onsubmit = "return validate()">
 				<div class = "row">
 					<div class="col m3 hide-on-small-only"></div>
 					<div class = "input-field col s12 m6">
@@ -63,15 +63,16 @@
 							<label for = "student">Student</label>
 						</p>
 						<p>
-							<input class = "with-gap" name = "role" type = "radio" id = "teacher" required value="teacher">
+							<input class = "with-gap" name = "role" type = "radio" id = "teacher" value="teacher">
 							<label for = "teacher">Teacher</label>
 						</p>
 						<p>
-							<input class = "with-gap" name = "role" type = "radio" id = "parent" required value="parent">
+							<input class = "with-gap" name = "role" type = "radio" id = "parent" value="parent">
 							<label for = "parent">Parent</label>
 						</p>
 					</div>
 				</div>
+				<!-- this div only visible when user selects student as account type -->
 				<div class = "row" id = "selectHolder" style = "display: none">
 					<div class = "col m3 hide-on-small-only"></div>
 					<div class="input-field col s12 m6">
@@ -98,11 +99,11 @@
 		
 		$(document).ready(function()
 		{
-			$('select').material_select();
-			showHideAgeSelection();
+			$('select').material_select(); //needed to show the select element
+			showHideGradeSelection();
 		});
 
-		for(var i = 1; i < 13; i++)
+		for(var i = 1; i < 9; i++) //builds the grade selection list
 		{
 			var option = document.createElement("OPTION");
 			grade.options.add(option);
@@ -110,7 +111,7 @@
 			option.value = i;
 		}
 
-		function comparePasswords()
+		function comparePasswords() //will compare password and confirm password fields as the user types
 		{			
 			if(pwd.value != confirm.value && pwd.value != "" && confirm.value != "")
 			{
@@ -122,20 +123,19 @@
 				mismatch.style.display = "none";
 		}
 		
-		function showHideAgeSelection()
+		function showHideGradeSelection() //ensures grade selection only appears when user registers as student
 		{
 			var selectHolder = document.getElementById("selectHolder");
 			
-			//only display when user registers as a student
 			if(role[0].checked)
 				selectHolder.style.display = "block";
 			else
 				selectHolder.style.display = "none";
 		}
 		
-		role[0].onchange = showHideAgeSelection;
-		role[1].onchange = showHideAgeSelection;
-		role[2].onchange = showHideAgeSelection;
+		role[0].onchange = showHideGradeSelection; //student
+		role[1].onchange = showHideGradeSelection; //teacher
+		role[2].onchange = showHideGradeSelection; //parent
 		
 		function validate() //prevent submission of invalid data
 		{
@@ -150,8 +150,13 @@
 			
 			if(!role[0].checked) //when user is not a student, ensure that the grade value is NULL
 				grade.value = "NULL";
-			
-			window.location = "index.html"; //redirect to student index
+				
+			if(role[0].checked)
+				document.getElementById("signup").action = "index.html"; //redirect to the student homepage
+			else if(role[1].checked)
+				document.getElementById("signup").action = "teacher.html"; //redirect to teacher page
+			else //parent
+				//redirect to parent page
 		
 			return false; //prevent attempted submission to the database
 		}
